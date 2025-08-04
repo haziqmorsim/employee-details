@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h2>Employee List</h2>
+
+  <div class="mb-3">
+    <input type="text" [(ngModel)]="searchQuery" (input)="searchEmployees()" class="form-control" placeholder="Search employees...">
+  </div>
+
+  <button class="btn btn-primary mb-3" (click)="onCreate()">Create New</button>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of filteredEmployees">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.position }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm me-1" (click)="onEdit(emp)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="onDelete(emp.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
