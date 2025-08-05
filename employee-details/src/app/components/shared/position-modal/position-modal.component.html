@@ -10,23 +10,9 @@
         </div>
 
         <div class="mb-2">
-          <label>Name:</label>
+          <label>Position Name:</label>
           <input type="text" class="form-control" formControlName="name">
         </div>
-
-        <div class="mb-2">
-          <label>Position:</label>
-          <select class="form-control" formControlName="position">
-            <option *ngFor="let pos of positions" [value]="pos.name">{{ pos.name }}</option>
-          </select>
-        </div>
-
-        <div class="mb-2">
-        <label>Department</label>
-        <select class="form-control" formControlName="departmentId">
-          <option *ngFor="let dept of departments" [value]="dept.id">{{ dept.name }}</option>
-        </select>
-      </div>
 
         <div class="text-end">
           <button type="button" class="btn btn-secondary me-2" (click)="closeModal()">Cancel</button>

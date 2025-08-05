@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <h2>Departments</h2>
+
+  <input type="text" class="form-control mb-3" [(ngModel)]="searchQuery" placeholder="Search departments...">
+
+  <button class="btn create-new-btn" (click)="onCreate()">Create New</button>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Department Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dept of filteredDepartments(); let i = index" [class.bg-light]="i % 2 === 0">
+        <td>{{ dept.id }}</td>
+        <td>{{ dept.name }}</td>
+        <td>{{ dept.description }}</td>
+        <td>
+          <button class="edit-btn" (click)="onEdit(dept)">Edit</button>
+          <button class="delete-btn" (click)="onDelete(dept.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal Component -->
+  <app-department-modal
+    *ngIf="showModal"
+    [department]="editingDepartment"
+    (formSubmit)="onFormSubmit($event)"
+    (cancel)="onCancelModal()">
+  </app-department-modal>
+</div>

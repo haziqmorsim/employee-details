@@ -10,6 +10,9 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { ModalsComponent } from './components/shared/modals/modals.component';
 import { EmployeeModalComponent } from './components/shared/employee-modal/employee-modal.component';
+import { PositionModalComponent } from './components/shared/position-modal/position-modal.component';
+import { DepartmentsComponent } from './components/departments/departments.component';
+import { DepartmentModalComponent } from './components/shared/department-modal/department-modal.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { EmployeeModalComponent } from './components/shared/employee-modal/emplo
     LoginComponent,
     SignupComponent,
     ModalsComponent,
-    EmployeeModalComponent
+    EmployeeModalComponent,
+    PositionModalComponent,
+    DepartmentsComponent,
+    DepartmentModalComponent
   ],
   imports: [
     BrowserModule,

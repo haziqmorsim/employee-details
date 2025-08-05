@@ -13,6 +13,7 @@
         <th>ID</th>
         <th>Name</th>
         <th>Position</th>
+        <th>Department</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -21,6 +22,7 @@
         <td>{{ emp.id }}</td>
         <td>{{ emp.name }}</td>
         <td>{{ emp.position }}</td>
+        <td>{{ getDepartmentName(emp.departmentId) }}</td>
         <td>
           <button class="btn btn-warning btn-sm me-1" (click)="onEdit(emp)">Edit</button>
           <button class="btn btn-danger btn-sm" (click)="onDelete(emp.id)">Delete</button>
@@ -28,4 +30,10 @@
       </tr>
     </tbody>
   </table>
+  <app-employee-modal
+    *ngIf="showModal"
+    [employee]="editingEmployee"
+    (formSubmit)="onFormSubmit($event)"
+    (cancel)="onCancelModal()">
+  </app-employee-modal>
 </div>

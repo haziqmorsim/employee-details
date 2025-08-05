@@ -1,1 +1,14 @@
-<p>signup works!</p>
+<div class="container mt-5">
+  <h2>Sign Up</h2>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="mb-2">
+      <input class="form-control" formControlName="username" placeholder="Username">
+    </div>
+    <div class="mb-2">
+      <input class="form-control" type="password" formControlName="password" placeholder="Password">
+      <small>Password must contain uppercase, number, and symbol.</small>
+    </div>
+    <div *ngIf="error" class="text-danger">{{ error }}</div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+  </form>
+</div>

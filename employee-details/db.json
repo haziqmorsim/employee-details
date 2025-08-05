@@ -1,8 +1,14 @@
 {
   "employees": [
-    { "id": 1, "name": "Haziq Morsim", "position": "Developer" }
+    { "id": 1, "name": "Haziq Morsim", "position": "Developer", "departmentId": 1 },
+    { "id": 1, "name": "Fairul Rizal", "position": "HR Manager", "departmentId": 2 }
   ],
   "positions": [
-    { "id": 1, "name": "Developer" }
+    { "id": 1, "name": "Developer" },
+    { "id": 2, "name": "HR Manager" }
+  ],
+  "departments": [
+    { "id": 1, "name": "IT", "description": "Information Technology" },
+    { "id": 2, "name": "HR", "description": "Human Resources" }
   ]
 }

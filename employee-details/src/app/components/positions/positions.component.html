@@ -1,1 +1,33 @@
-<p>positions works!</p>
+<div class="container mt-4">
+  <h2>Positions</h2>
+
+  <input class="form-control mb-3" type="text" [(ngModel)]="searchQuery" placeholder="Search position...">
+
+  <button class="btn btn-primary mb-3" (click)="onCreate()">Create New</button>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Position Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pos of searchPositions()">
+        <td>{{ pos.id }}</td>
+        <td>{{ pos.name }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm me-1" (click)="onEdit(pos)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="onDelete(pos.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+ <app-position-modal *ngIf="showModal"
+  [position]="editingPosition"
+  (formSubmit)="onFormSubmit($event)"
+  (cancel)="onCancelModal()"></app-position-modal>
